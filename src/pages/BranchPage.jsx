@@ -10,11 +10,6 @@ const BranchPage = () => {
 
     return (
         <>
-            <Header />
-
-            <div className="container-fluid page-body-wrapper">
-
-                <Sidebar />
 
                 <div className="main-panel">
                     <div className="content-wrapper">
@@ -22,7 +17,7 @@ const BranchPage = () => {
                         <BranchTAble />
                     </div>
                 </div>
-            </div>
+            
 
         </>
     )

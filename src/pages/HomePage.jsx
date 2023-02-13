@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+
 
 
 
 const HomePage = () => {
+    
 
     return (
         <>
-            <Header />
 
-            <div className="container-fluid page-body-wrapper">
 
-                <Sidebar />
+            
+
+
 
                 <div className="main-panel">
                     <div className="content-wrapper">
@@ -352,7 +352,6 @@ const HomePage = () => {
 
                 </div>
 
-            </div>
         </>
 
 

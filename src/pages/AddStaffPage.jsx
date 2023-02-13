@@ -12,11 +12,6 @@ const AddStaffPage = () => {
 
         <>
 
-            <Header />
-
-            <div className="container-fluid page-body-wrapper">
-
-                <Sidebar />
 
                 <div className="main-panel">
                     <div className="content-wrapper">
@@ -24,7 +19,7 @@ const AddStaffPage = () => {
                         <AddStaffForm />
                     </div>
                 </div>
-            </div>
+           
         </>
 
     )

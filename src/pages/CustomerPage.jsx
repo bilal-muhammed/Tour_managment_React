@@ -12,11 +12,6 @@ const CustomerPage = () => {
 
         <>
 
-                <Header />
-
-                <div className="container-fluid page-body-wrapper">
-
-                    <Sidebar />
 
                     <div className="main-panel">
                         <div className="content-wrapper">
@@ -24,7 +19,6 @@ const CustomerPage = () => {
                             <CustomerTable/>
                         </div>
                     </div>
-                </div>
         </>
 
     )

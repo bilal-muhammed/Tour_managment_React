@@ -6,23 +6,17 @@ import AddCustomerForm from "../components/AddCustomerForm";
 
 const AddCustomerPage = () => {
 
-
     return (
+
 
 
         <>
 
-            <Header />
 
-            <div className="container-fluid page-body-wrapper">
+            <div className="main-panel">
+                <div className="content-wrapper">
 
-                <Sidebar />
-
-                <div className="main-panel">
-                    <div className="content-wrapper">
-
-                        <AddCustomerForm />
-                    </div>
+                    <AddCustomerForm />
                 </div>
             </div>
         </>
