@@ -10,18 +10,13 @@ const Layout = () => {
     return (
 
         <>
-
             <Header />
-
             <div className="container-fluid page-body-wrapper">
-
                 <Sidebar />
-                
+
                 <Outlet />
-             </div>   
-
-            </>
-
-            )
+            </div>
+        </>
+    )
 };
-            export default Layout;
+export default Layout;
