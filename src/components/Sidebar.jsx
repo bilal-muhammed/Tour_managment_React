@@ -5,11 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
 
+    const [active, setActive] = useState(1)
+
     return (
 
         <nav className="sidebar sidebar-offcanvas" id="sidebar">
             <ul className="nav">
-                <li className="nav-item">
+                <li className={`nav-item ${active == 1 && 'active'}`} onClick={()=> setActive(1)}>
                     <Link to="/home" className="nav-link">
                         <i className="ti-shield menu-icon"></i>
                         <span className="menu-title">Dashboard</span>
@@ -17,7 +19,7 @@ const Sidebar = () => {
                 </li>
                 <br />
                 <hr />
-                <li className="nav-item">
+                <li className={`nav-item ${active == 2 && 'active'}`} onClick={()=> setActive(2)}>
                     <a className="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
 
                         <i class="ti-user menu-icon"></i>
@@ -31,7 +33,7 @@ const Sidebar = () => {
                         </ul>
                     </div>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${active == 3 && 'active'}`} onClick={()=> setActive(3)}>
                     <a className="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="ui-leads" href="#ui-leads">
                         <i className="ti-bar-chart-alt menu-icon"></i>
                         <span className="menu-title">Leads</span>
@@ -48,7 +50,7 @@ const Sidebar = () => {
                 </li>
 
 
-                <li className="nav-item">
+                <li className={`nav-item ${active == 4 && 'active'}`} onClick={()=> setActive(4)}>
                     <a className="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="ui-staff" href="#ui-staff">
                     <i class="ti-user menu-icon"></i>
                         <span className="menu-title">Staff</span>
@@ -67,7 +69,7 @@ const Sidebar = () => {
                 </li>
                  
 
-                <li className="nav-item">
+                <li className={`nav-item ${active == 5 && 'active'}`} onClick={()=> setActive(5)}>
                     <a className="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                         <i className="ti-rss menu-icon"></i>
                         <span className="menu-title">Branch & Brands</span>
@@ -82,32 +84,32 @@ const Sidebar = () => {
                         </ul>
                     </div>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${active == 6 && 'active'}`} onClick={()=> setActive(6)}>
                     <Link to="/add_tours" className="nav-link">
                         <i className="ti-write menu-icon"></i>
                         <span className="menu-title">Create Tour</span>
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${active == 7 && 'active'}`} onClick={()=> setActive(7)}>
                     <Link to="/list_response" className="nav-link">
                     <i className="ti-headphone-alt menu-icon"></i>
                         <span className="menu-title">Response</span>
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${active == 8 && 'active'}`} onClick={()=> setActive(8)}>
                     <Link to="/accounts" className="nav-link">
                         <i className="ti-ruler-pencil menu-icon"></i>
                         <span className="menu-title">Accounts</span>
                     </Link>
 
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${active == 9 && 'active'}`} onClick={()=> setActive(9)}>
                     <Link to="/billings" className="nav-link">
                         <i className="ti-credit-card menu-icon"></i>
                         <span className="menu-title">Billing</span>
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${active == 10 && 'active'}`} onClick={()=> setActive(0)}>
                     <Link to="/follo_up" className="nav-link">
 
 
@@ -116,13 +118,13 @@ const Sidebar = () => {
                         
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${active == 11 && 'active'}`} onClick={()=> setActive(1)}>
                     <Link to="/leave_request" className="nav-link">
                         <i className="ti-comment-alt menu-icon"></i>
                         <span className="menu-title">Leave Request</span>
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${active == 12 && 'active'}`} onClick={()=> setActive(2)}>
                     <Link to="/staff_activity" className="nav-link">
                         <i className="ti-hand-drag menu-icon"></i>
                         <span className="menu-title">Staff Activity</span>

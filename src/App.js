@@ -16,10 +16,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          
           <Route element={<Layout />}>
-
-
             <Route element={<HomePage />} path="/home" exact />
             <Route element={<AddCustomerPage />} path="/add_custommer" />
             <Route element={<CustomerPage />} path="/all_customers" />
@@ -27,12 +24,8 @@ function App() {
             <Route element={<StaffDetailsPage />} path="/staff_details" />
             <Route element={<ResponsePage />} path="/list_response" />
             <Route element={<BranchPage />} path="/list_branch" />
-
-
           </Route>
-
         </Routes>
-
       </Router>
     </div>
   );
