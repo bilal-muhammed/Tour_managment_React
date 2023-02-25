@@ -1,84 +1,110 @@
 import React, { useState, useEffect, useContext } from "react";
+import axios from 'axios';
 
 
 
-const CustomerTable = () => {
+export default class CustomerTable extends React.Component {
+    state = {
+        customer: []
+    }
 
-    return (
-        <>
-            <div className="col-lg-12 grid-margin stretch-card">
-                <div className="card">
-                    <div className="card-body">
-                        <h4 className="card-title">Bordered table</h4>
-                        <p className="card-description">
-                            Add className <code>.table-bordered</code>
-                        </p>
-                        <div className="table-responsive pt-3">
-                            <table className="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            SL.NO
-                                        </th>
-                                        <th>
-                                            Date
-                                        </th>
-                                        <th>
-                                            Name
-                                        </th>
-                                        <th>
-                                            Mobile
-                                        </th>
-                                        <th>
-                                            Location
-                                        </th>
-                                        <th>
-                                            Staff Name
-                                        </th><th>
-                                            Branch
-                                        </th><th>
-                                            Tour
-                                        </th><th>
-                                            Progress
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Herman Beck
-                                        </td>
-                                        <td>
-                                            <div className="progress">
-                                                {/* <div className="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div> */}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            $ 77.99
-                                        </td>
-                                        <td>
-                                            May 15, 2015
-                                        </td><td>
-                                            May 15, 2015
-                                        </td><td>
-                                            May 15, 2015
-                                        </td><td>
-                                            May 15, 2015
-                                        </td><td>
-                                            May 15, 2015
-                                        </td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
+    componentDidMount() {
+        axios.get(`http://127.0.0.1:8000/user_managment/list/customer`)
+            .then(res => {
+                const customer = res.data;
+                this.setState({ customer });
+            })
+    }
+
+    render() {
+        return (
+            <>
+                <div className="col-lg-12 grid-margin stretch-card">
+                    <div className="card">
+                        <div className="card-body">
+                            <h4 className="card-title">Bordered table</h4>
+                            <div className="table-responsive pt-3">
+                                <table className="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                SL.NO
+                                            </th>
+                                            <th>
+                                                Date
+                                            </th>
+                                            <th>
+                                                Customer Name
+                                            </th>
+                                            <th>
+                                                Mobile
+                                            </th>
+                                            <th>
+                                                Location
+                                            </th>
+                                            <th>
+                                                Pax
+                                            </th><th>
+                                                Branch
+                                            </th><th>
+                                                Tour
+                                            </th><th>
+                                                Progress
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            this.state.customer
+                                                .map(customer =>
+                                                    
+                                                
+                                        <tr key={customer.id}>
+                                            <td>
+                                                {customer.id}
+                                            </td>
+                                            <td>
+                                            {customer.is_created}
+                                            </td>
+                                            <td>
+                                            {customer.name}
+                                            </td><td>
+                                            {customer.phone}
+                                            </td><td>
+                                            {customer.city}
+                                            </td>
+                                            <td>
+                                            {customer.pax}
+                                            </td>
+                                            <td>
+                                            {customer.branch.name }
+                                            </td>
+                                            <td>
+                                            {customer.tour}
+                                            </td><td>
+                                            {customer.progress}
+                                            </td>
+                                            
+                                        </tr>
+                                        )
+                                    }
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
-    )
-};
-export default CustomerTable;
+                <div className="col-lg-12 grid-margin stretch-card">
+                    <div className="card">
+                        <div className="card-body">
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </>
+        )
+    }
+}

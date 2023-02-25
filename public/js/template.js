@@ -36,10 +36,10 @@
     }
 
     var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
-    $('.nav li a', sidebar).each(function() {
-      var $this = $(this);
-      addActiveClass($this);
-    })
+    // $('.nav li a', sidebar).each(function() {
+    //   var $this = $(this);
+    //   addActiveClass($this);
+    // })
 
     //Close other submenu in sidebar on opening any
 
